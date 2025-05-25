@@ -1,0 +1,5 @@
+eel
+pillow
+tflite-runtime
+opencv-python
+numpy<2

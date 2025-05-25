@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dvimaya</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="/eel.js"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="app-name">
+            Dvimaya
+        </div>
+        <div class="menu">
+            <div>
+                <svg class="nav-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM7 12H9C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12H17C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12Z">
+                    </path>
+                </svg>
+            </div>
+            <div>
+                <svg class="nav-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path>
+                </svg>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Upload Page -->
+        <div id="uploadPage" class="page active">
+            <h1 class="header">Manual Upload</h1>
+
+            <div id="drop-area">
+                <p id="drop-text">Drag & Drop or Click to Upload an EXE File</p>
+                <input type="file" id="fileInput" accept=".exe" hidden>
+            </div>
+
+            <button id="upload-btn" onclick="startScanning()">Scan</button>
+        </div>
+
+        <!-- Scanning Page -->
+        <div id="scanningPage" class="page">
+            <div class="scanning-icon">
+                <svg width="222" height="222" viewBox="0 0 222 222" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M138.75 27.75H194.25V74H175.75V46.25H138.75V27.75ZM83.25 27.75V46.25H46.25V74H27.75V27.75H83.25ZM138.75 194.25V175.75H175.75V148H194.25V194.25H138.75ZM83.25 194.25H27.75V148H46.25V175.75H83.25V194.25ZM27.75 101.75H194.25V120.25H27.75V101.75Z"
+                        fill="white" />
+                </svg>
+            </div>
+            <h1 class="header">Scanning 
+                <!-- <span id="scanPercentage">....</span> -->
+            </h1>
+            <p class="center subtext">using CNN Model</p>
+            <button class="cancel-btn" onclick="cancelScan()">Cancel</button>
+        </div>
+
+        <!-- Results Page -->
+        <div id="resultsPage" class="page">
+            <h1 class="header">Scan Results</h1>
+            <img id="resultIcon" src="" alt="Result">
+            <h2 class="center" id="scanResult"></h2>
+            <p class="center">Predicted using CNN Model</p>
+            <button onclick="showPage('uploadPage')">Done</button>
+            <p>Wrong Prediction? <a href="#">Send file to Dvimaya Team</a></p>
+        </div>
+    </div>
+    </div>
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>

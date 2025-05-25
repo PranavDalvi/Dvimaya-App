@@ -1,0 +1,1 @@
+pyinstaller --windowed --onedir --icon=./static/assets/dvimaya_icon.ico --add-data "static;static" --add-data "ai-model;ai-model" --add-data "utils;utils" main.py
